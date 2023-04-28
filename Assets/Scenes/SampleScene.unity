@@ -135,9 +135,12 @@ GameObject:
   - component: {fileID: 92410190}
   - component: {fileID: 92410189}
   - component: {fileID: 92410191}
+  - component: {fileID: 92410192}
+  - component: {fileID: 92410193}
+  - component: {fileID: 92410194}
   m_Layer: 0
   m_Name: BlueStick
-  m_TagString: Untagged
+  m_TagString: Stick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,6 +240,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b83161c9182edd40ab5b4f5171bd136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &92410192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92410187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589ffcae77428434194eda59cd45c3b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leftBorder: {fileID: 1439057233}
+  _rightBorder: {fileID: 1504274363}
+  _topBorder: {fileID: 1154309429}
+  _bottomBorder: {fileID: 173751023}
+--- !u!114 &92410193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92410187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053a4825c2ac1cc419762c5815ac828d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplier: 1
+--- !u!50 &92410194
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92410187}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &102336844
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,9 +666,12 @@ GameObject:
   - component: {fileID: 578147251}
   - component: {fileID: 578147250}
   - component: {fileID: 578147249}
+  - component: {fileID: 578147252}
+  - component: {fileID: 578147253}
+  - component: {fileID: 578147254}
   m_Layer: 0
   m_Name: RedStick
-  m_TagString: Untagged
+  m_TagString: Stick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -647,10 +703,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba8896c00ae42db4ab6c39bc96487c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftBorder: {fileID: 1439057233}
-  _rightBorder: {fileID: 1504274363}
-  _topBorder: {fileID: 1373391325}
-  _bottomBorder: {fileID: 1154309429}
 --- !u!58 &578147250
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -719,6 +771,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &578147252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578147247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589ffcae77428434194eda59cd45c3b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leftBorder: {fileID: 1439057233}
+  _rightBorder: {fileID: 1504274363}
+  _topBorder: {fileID: 1373391325}
+  _bottomBorder: {fileID: 1154309429}
+--- !u!114 &578147253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578147247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053a4825c2ac1cc419762c5815ac828d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplier: 1
+--- !u!50 &578147254
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578147247}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &907980132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,6 +1390,7 @@ GameObject:
   - component: {fileID: 1585273278}
   - component: {fileID: 1585273280}
   - component: {fileID: 1585273281}
+  - component: {fileID: 1585273282}
   m_Layer: 0
   m_Name: Puck
   m_TagString: Puck
@@ -1391,13 +1494,13 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 1
+  m_AngularDrag: 2
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: f721b6837ab3c6746b0a1ba45a81fe08, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1585273281
 MonoBehaviour:
@@ -1411,6 +1514,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b739f187f28b6842a8b5c4b64a9fb7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1585273282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585273276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589ffcae77428434194eda59cd45c3b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leftBorder: {fileID: 1439057233}
+  _rightBorder: {fileID: 1504274363}
+  _topBorder: {fileID: 1373391325}
+  _bottomBorder: {fileID: 173751023}
 --- !u!1001 &1609101272
 PrefabInstance:
   m_ObjectHideFlags: 0
