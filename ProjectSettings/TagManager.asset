@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Puck
   - Stick
+  - RedGate
+  - BlueGate
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PuckScript : MonoBehaviour
 {
+    public ChangeScoreScript changeScoreScript;
     private Rigidbody2D _rigidBody;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,14 @@ public class PuckScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        // _rigidBody.velocity = new Vector2(_rigidBody.velocity.x - 1.5f * Math.Sign(_rigidBody.velocity.x), _rigidBody.velocity.y  - 1.5f * Math.Sign(_rigidBody.velocity.y));
+        if (col.gameObject.CompareTag("RedGate"))
+        {
+            changeScoreScript.BlueScore++;
+        }
+        
+        if (col.gameObject.CompareTag("BlueGate"))
+        {
+            changeScoreScript.RedScore++;
+        }
     }
 }
