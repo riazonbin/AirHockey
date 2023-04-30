@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -8,6 +9,10 @@ public class ChangeScoreScript : MonoBehaviour
 {
     private int _redScore;
     private int _blueScore;
+
+    [SerializeField]
+    private RestoreObjectsPositionScript _positionScript;
+
     public int RedScore
     {
         get => _redScore;
@@ -15,6 +20,7 @@ public class ChangeScoreScript : MonoBehaviour
         {
             _redScore = value;
             redScoreText.text = _redScore.ToString();
+            _positionScript.RestoreObjectsPositions();
         }
     }
     public int BlueScore
@@ -24,6 +30,7 @@ public class ChangeScoreScript : MonoBehaviour
         {
             _blueScore = value;
             blueScoreText.text = _blueScore.ToString();
+            _positionScript.RestoreObjectsPositions();
         }
     }
 

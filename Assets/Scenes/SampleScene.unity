@@ -233,7 +233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92410187}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.21, z: 0}
+  m_LocalPosition: {x: 0, y: -2.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2463,6 +2463,7 @@ GameObject:
   - component: {fileID: 2042262479}
   - component: {fileID: 2042262482}
   - component: {fileID: 2042262483}
+  - component: {fileID: 2042262484}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2547,8 +2548,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d82cc9a6bf424544f8ac5ab7d9455a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _positionScript: {fileID: 2042262484}
   redScoreText: {fileID: 142897155}
   blueScoreText: {fileID: 1863276217}
+--- !u!114 &2042262484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042262478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337a1751c9f392c40a6ae9f44c382069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redBall: {fileID: 578147248}
+  blueBall: {fileID: 92410188}
+  puck: {fileID: 1585273277}
 --- !u!1001 &6247313691817284455
 PrefabInstance:
   m_ObjectHideFlags: 0
