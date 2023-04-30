@@ -8,7 +8,7 @@ public class ChangePhysicsScript : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private List<StickMovementScriptWithKeys> keyScripts;
 
-    private readonly int[] _possibleRotations = new[] { 0, 90, 180, 270 };
+    private readonly int[] _possibleRotations = { 0, 90, 180, 270 };
 
 
     private void Start()
@@ -18,16 +18,19 @@ public class ChangePhysicsScript : MonoBehaviour
 
     private IEnumerator ChangePhysics()
     {
-        yield return new WaitForSeconds(1);
-        RotateCamera();
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(5, 10));
+            RotateCamera();
+        }
     }
-
 
     public void RotateCamera()
     {
-        var index = 0;
-        cameraTransform.rotation = Quaternion.Euler(0, 0, _possibleRotations[index]);
-        background.rotation = Quaternion.Euler(0, 0, 90 + _possibleRotations[index]);
-        keyScripts.ForEach(x => x.Rotate(_possibleRotations[index]));
+        var index = Random.Range(0, _possibleRotations.Length);
+        var rotationAngle = _possibleRotations[index];
+        cameraTransform.rotation = Quaternion.Euler(0, 0, rotationAngle);
+        background.localRotation = Quaternion.Euler(0, 0, 90 + rotationAngle);
+        keyScripts.ForEach(x => x.Rotate(rotationAngle));
     }
 }
