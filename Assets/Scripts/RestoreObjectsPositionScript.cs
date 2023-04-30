@@ -1,34 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RestoreObjectsPositionScript : MonoBehaviour
 {
-    [SerializeField]
-    private Transform redBall;
+    [SerializeField] private Transform redBall;
 
-    [SerializeField]
-    private Transform blueBall;
+    [SerializeField] private Transform blueBall;
 
-    [SerializeField]
-    private Transform puck;
+    [SerializeField] private Transform puck;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Transform bluePos;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private Transform redPos;
 
     public void RestoreObjectsPositions()
     {
-        redBall.position = new Vector2(0, 2.93f);
-        blueBall.position = new Vector2(0, -2.93f);
+        redBall.position = redPos.position;
+        blueBall.position = bluePos.position;
         puck.position = new Vector2(0, 0);
         puck.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
     }
