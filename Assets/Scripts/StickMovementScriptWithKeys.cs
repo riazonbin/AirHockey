@@ -23,22 +23,22 @@ public class StickMovementScriptWithKeys : MonoBehaviour
         var target = transform.position;
         if (Input.GetKey(_keyCodes[0]))
         {
-            target.y += 5;
+            target.y += 1;
         }
 
         if (Input.GetKey(_keyCodes[1]))
         {
-            target.x += 5;
+            target.x += 1;
         }
 
         if (Input.GetKey(_keyCodes[2]))
         {
-            target.y -= 5;
+            target.y -= 1;
         }
 
         if (Input.GetKey(_keyCodes[3]))
         {
-            target.x -= 5;
+            target.x -= 1;
         }
 
         _rigidBody.MovePosition(Vector3.MoveTowards(transform.position, target, Game.FactStickSpeed * Time.deltaTime));

@@ -1,6 +1,7 @@
 using System;
 using Assets.StaticData;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PuckScript : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PuckScript : MonoBehaviour
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
+        _rigidBody.AddForce(new Vector2(1600, 0));
     }
 
     // Update is called once per frame

@@ -19,7 +19,7 @@ public class ChangePhysicsScript : MonoBehaviour
 
     private void Start()
     {
-        _possiblePhysicsChanges = new Action[] { RandomSpeedChange, RandomStickScale, RandomPuckScale, RotateCamera };
+        _possiblePhysicsChanges = new Action[] { RotateCamera };
         StartCoroutine(ChangePhysics());
     }
 
@@ -35,7 +35,7 @@ public class ChangePhysicsScript : MonoBehaviour
 
     private void RotateCamera()
     {
-        var index = Random.Range(0, _possibleRotations.Length);
+        var index = 1;
         var rotationAngle = _possibleRotations[index];
         cameraTransform.rotation = Quaternion.Euler(0, 0, rotationAngle);
         background.localRotation = Quaternion.Euler(0, 0, 90 + rotationAngle);
