@@ -5,7 +5,9 @@ using UnityEngine;
 public class PuckScript : MonoBehaviour
 {
     public ChangeScoreScript changeScoreScript;
+
     private Rigidbody2D _rigidBody;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,10 @@ public class PuckScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        _rigidBody.velocity = new Vector2(Math.Min(Math.Abs(_rigidBody.velocity.x), Game.PuckMaxSpeed) * Math.Sign(_rigidBody.velocity.x), Math.Min(Math.Abs(_rigidBody.velocity.y), Game.PuckMaxSpeed) * Math.Sign(_rigidBody.velocity.y));
+        _rigidBody.velocity =
+            new Vector2(
+                Math.Min(Math.Abs(_rigidBody.velocity.x), Game.FactPuckSpeed) * Math.Sign(_rigidBody.velocity.x),
+                Math.Min(Math.Abs(_rigidBody.velocity.y), Game.FactPuckSpeed) * Math.Sign(_rigidBody.velocity.y));
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -24,7 +29,7 @@ public class PuckScript : MonoBehaviour
         {
             changeScoreScript.BlueScore++;
         }
-        
+
         if (col.gameObject.CompareTag("BlueGate"))
         {
             changeScoreScript.RedScore++;

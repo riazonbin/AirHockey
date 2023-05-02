@@ -27,6 +27,6 @@ public class StickBoundsCollisionScript : MonoBehaviour
 
         target.x = Mathf.Clamp(target.x, leftBorder.position.x + stickHalfSize, rightBorder.position.x - stickHalfSize);
         target.y = Mathf.Clamp(target.y, bottomBorder.position.y + stickHalfSize, topBorder.position.y - stickHalfSize);
-        transform.position = Vector3.MoveTowards(transform.position, target, Game.StickSpeedDistance);
+        transform.position = Vector3.MoveTowards(transform.position, target, Game.FactStickSpeed * Time.deltaTime);
     }
 }

@@ -41,7 +41,7 @@ public class StickMovementScriptWithKeys : MonoBehaviour
             target.x -= 5;
         }
 
-        _rigidBody.MovePosition(Vector3.MoveTowards(transform.position, target, Game.StickSpeedDistance));
+        _rigidBody.MovePosition(Vector3.MoveTowards(transform.position, target, Game.FactStickSpeed * Time.deltaTime));
     }
 
     public void Rotate(int angle)
