@@ -29,7 +29,6 @@ public class ChangePhysicsScript : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(1, 2));
             var index = Random.Range(0, _possiblePhysicsChanges.Length);
-            Debug.Log(index);
             _possiblePhysicsChanges[index]();
         }
     }
@@ -57,7 +56,7 @@ public class ChangePhysicsScript : MonoBehaviour
 
     private void RandomSpeedChange()
     {
-        var stickSpeed = Random.Range(40, 60);
+        var stickSpeed = Random.Range(20, 40);
         Game.FactStickSpeed = stickSpeed;
         var puckSpeed = Random.Range(15, 25);
         Game.FactPuckSpeed = puckSpeed;
