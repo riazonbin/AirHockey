@@ -37,7 +37,7 @@ public class BallPushingScript : MonoBehaviour
             _canPushBlue = false;
             StartCoroutine(SpacebarCooldown());
             var index = Random.Range(0, 2);
-            ball.AddForce(new Vector2(index == 1 ? _pushForce : -_pushForce, _pushForce));
+            ball.AddForce(new Vector2(index == 1 ? -_pushForce : _pushForce, _pushForce));
             _blueTimeRemaining = 4;
         }
 
@@ -49,6 +49,16 @@ public class BallPushingScript : MonoBehaviour
             ball.AddForce(new Vector2(index == 1 ? _pushForce : -_pushForce, -_pushForce));
             _redTimeRemaining = 4;
         }
+    }
+
+    public void ResetCooldowns()
+    {
+        _canPushRed = true;
+        _canPushBlue = true;
+        _blueTimeRemaining = 0;
+        _redTimeRemaining = 0;
+        blueCooldownText.text = "0";
+        redCooldownText.text = "0";
     }
 
     IEnumerator SpacebarCooldown()

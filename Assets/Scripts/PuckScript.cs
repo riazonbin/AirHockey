@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Assets.StaticData;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -7,11 +8,14 @@ public class PuckScript : MonoBehaviour
 {
     public ChangeScoreScript changeScoreScript;
 
+    [SerializeField] private List<BoxCollider2D> _ignoredColliders;
     private Rigidbody2D _rigidBody;
 
     // Start is called before the first frame update
     void Start()
     {
+        var circleCollider = GetComponent<CircleCollider2D>();
+        _ignoredColliders.ForEach(x => Physics2D.IgnoreCollision(x, circleCollider));
         _rigidBody = GetComponent<Rigidbody2D>();
         _rigidBody.AddForce(new Vector2(1600, 0));
     }

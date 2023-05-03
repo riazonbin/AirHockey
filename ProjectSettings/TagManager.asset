@@ -8,6 +8,7 @@ TagManager:
   - Stick
   - RedGate
   - BlueGate
+  - Limit
   layers:
   - Default
   - TransparentFX
